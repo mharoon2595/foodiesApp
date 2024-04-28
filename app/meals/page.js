@@ -1,8 +1,15 @@
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import classes from "./page.module.css";
+import MealsGrid from "@/components/MealsGrid";
+import { getMeals } from "@/lib/meals";
 
-const page = () => {
+async function FetchMeals() {
+  const data = await getMeals();
+  return <MealsGrid meals={data} />;
+}
+
+const page = async () => {
   return (
     <>
       <header className={classes.header}>
@@ -17,7 +24,13 @@ const page = () => {
           <Link href="/meals/share">Share your Favourite Recipe</Link>
         </p>
       </header>
-      <main className={classes.main}></main>
+      <main className={classes.main}>
+        <Suspense
+          fallback={<p className={classes.loading}>Fetching meals...</p>}
+        >
+          <FetchMeals />
+        </Suspense>
+      </main>
     </>
   );
 };

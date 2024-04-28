@@ -8,7 +8,8 @@ const NavLinks = ({ href, children }) => {
   const path = usePathname();
   return (
     <li
-      className={`hover:text-orange-400 hover:shadow-md ${
+      style={{ listStyleType: "none" }}
+      className={`hover:text-orange-400 hover:shadow-md  ${
         path.startsWith(href) ? classes.glow : ""
       }`}
     >

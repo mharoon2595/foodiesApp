@@ -1,5 +1,6 @@
 import MainHeader from "@/components/MainHeader";
 import "./globals.css";
+import FoodContextProvider from "@/store/context";
 
 export const metadata = {
   title: "NextLevel Food",
@@ -30,8 +31,10 @@ export default function RootLayout({ children }) {
             ></path>
           </svg>
         </div>
-        <MainHeader />
-        {children}
+        <FoodContextProvider>
+          <MainHeader />
+          {children}
+        </FoodContextProvider>
       </body>
     </html>
   );

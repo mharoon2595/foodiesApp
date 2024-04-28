@@ -13,6 +13,10 @@ body {
   background: radial-gradient(#282c34, #282c34);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .header-background {
   position: absolute;
   width: 100%;
@@ -54,6 +58,15 @@ svg {
   font-size: 1.5rem;
   font-weight: 500;
   color: #ddd8d8;
+}
+
+button {
+  border: 0;
+  padding: 0.5rem 1.5rem;
+  background: #a4abb9;
+  border-radius: 2px;
+  cursor: pointer;
+  font: inherit;
 }
 
 @tailwind base;
