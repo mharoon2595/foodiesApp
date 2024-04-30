@@ -1,8 +1,12 @@
 import Link from "next/link";
 import classes from "./page.module.css";
 import ImageSlideshow from "@/components/HeaderSlideshow";
+import establishConnection from "@/lib/mongoConnect";
 
-export default function Home() {
+export default async function Home() {
+  const data = await establishConnection();
+  console.log("DATA--->", data);
+
   return (
     <>
       <header className={classes.header}>

@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./page.module.css";
-import { getMeal } from "@/lib/meals";
+import { getMeal } from "@/lib/actions";
 import { notFound } from "next/navigation";
 import ImageOnDetails from "@/components/ImageOnDetails";
 
-const page = ({ params }) => {
-  const meal = getMeal(params.dynamic);
+const page = async ({ params }) => {
+  const meal = await getMeal(params.dynamic);
 
   if (!meal) {
     notFound();

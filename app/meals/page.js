@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { Suspense } from "react";
 import classes from "./page.module.css";
 import MealsGrid from "@/components/MealsGrid";
-import { getMeals } from "@/lib/meals";
+import { getMeals } from "@/lib/actions";
 
 async function FetchMeals() {
   const data = await getMeals();
