@@ -26,11 +26,21 @@ const MainHeader = () => {
       )}
       {showSidebar && (
         <Sidebar>
-          <div className="text-orange-500 py-2 px-1 text-lg">
+          <div
+            className="text-orange-500 py-2 px-1 text-lg font-bold"
+            onClick={() => {
+              setShowSidebar(false);
+            }}
+          >
             <NavLinks href={"/meals"}>Browse meals</NavLinks>
           </div>
 
-          <div className="text-orange-500 py-2 px-1 text-lg">
+          <div
+            className="text-orange-500 py-2 px-1 text-lg font-bold"
+            onClick={() => {
+              setShowSidebar(false);
+            }}
+          >
             <NavLinks href={"/community"}>Community</NavLinks>
           </div>
         </Sidebar>
