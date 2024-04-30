@@ -30,6 +30,7 @@ const MainHeader = () => {
             className="text-orange-500 py-2 px-1 text-lg font-bold"
             onClick={() => {
               setShowSidebar(false);
+              document.body.classList.remove("modal-open");
             }}
           >
             <NavLinks href={"/meals"}>Browse meals</NavLinks>
@@ -39,6 +40,7 @@ const MainHeader = () => {
             className="text-orange-500 py-2 px-1 text-lg font-bold"
             onClick={() => {
               setShowSidebar(false);
+              document.body.classList.remove("modal-open");
             }}
           >
             <NavLinks href={"/community"}>Community</NavLinks>
