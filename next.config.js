@@ -10,9 +10,6 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
-  experimental: {
-    instrumentationHook: true,
-  },
 };
 
 module.exports = nextConfig;

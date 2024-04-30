@@ -5,14 +5,15 @@ import MealItem from "./MealItem";
 const MealsGrid = ({ meals }) => {
   return (
     <ul className={classes.meals}>
-      {meals.map((meal) => {
-        meal._id = meal._id.toString();
-        return (
-          <li key={meal.id}>
-            <MealItem {...meal} />
-          </li>
-        );
-      })}
+      {meals.length &&
+        meals.map((meal) => {
+          meal._id = meal._id.toString();
+          return (
+            <li key={meal.id}>
+              <MealItem {...meal} />
+            </li>
+          );
+        })}
     </ul>
   );
 };
